@@ -31,34 +31,34 @@ This document contains a detailed enumerated task list for implementing the Swag
 ### Main Menu Screen
 *Plan: 2.1 | Requirements: #1, #20*
 
-- [ ] 2.1.1 Create MainMenuScreen composable function
-- [ ] 2.1.2 Display "Swag Collector" title with pixel art styling
-- [ ] 2.1.3 Implement Play/Start button with click handler
-- [ ] 2.1.4 Add optional high score display area
-- [ ] 2.1.5 Implement navigation to Game Screen on button click
-- [ ] 2.1.6 Apply pixel art aesthetic to all UI elements
+- [x] 2.1.1 Create MainMenuScreen composable function
+- [x] 2.1.2 Display "Swag Collector" title with pixel art styling
+- [x] 2.1.3 Implement Play/Start button with click handler
+- [x] 2.1.4 Add optional high score display area
+- [x] 2.1.5 Implement navigation to Game Screen on button click
+- [x] 2.1.6 Apply pixel art aesthetic to all UI elements
 
 ### Game Screen Layout
 *Plan: 2.2 | Requirements: #2, #15*
 
-- [ ] 2.2.1 Create GameScreen composable function
-- [ ] 2.2.2 Implement blue sky background rendering
-- [ ] 2.2.3 Create and add pixel art cloud sprites
-- [ ] 2.2.4 Render grey road/path at bottom of screen
-- [ ] 2.2.5 Position score counter in top corner of screen
-- [ ] 2.2.6 Set up coordinate system and define screen dimensions
-- [ ] 2.2.7 Ensure all visual elements use consistent pixel art style
+- [x] 2.2.1 Create GameScreen composable function
+- [x] 2.2.2 Implement blue sky background rendering
+- [x] 2.2.3 Create and add pixel art cloud sprites
+- [x] 2.2.4 Render grey road/path at bottom of screen
+- [x] 2.2.5 Position score counter in top corner of screen
+- [x] 2.2.6 Set up coordinate system and define screen dimensions
+- [x] 2.2.7 Ensure all visual elements use consistent pixel art style
 
 ### Game Over Screen
 *Plan: 2.3 | Requirements: #17*
 
-- [ ] 2.3.1 Create GameOverScreen composable function
-- [ ] 2.3.2 Display "Game Over" message prominently
-- [ ] 2.3.3 Show final score with clear formatting
-- [ ] 2.3.4 Implement Restart/Play Again button with click handler
-- [ ] 2.3.5 Implement Return to Main Menu button with click handler
-- [ ] 2.3.6 Wire up button actions to trigger state transitions
-- [ ] 2.3.7 Ensure game state resets properly on restart (score to 0, speed reset)
+- [x] 2.3.1 Create GameOverScreen composable function
+- [x] 2.3.2 Display "Game Over" message prominently
+- [x] 2.3.3 Show final score with clear formatting
+- [x] 2.3.4 Implement Restart/Play Again button with click handler
+- [x] 2.3.5 Implement Return to Main Menu button with click handler
+- [x] 2.3.6 Wire up button actions to trigger state transitions
+- [x] 2.3.7 Ensure game state resets properly on restart (score to 0, speed reset)
 
 ---
 
@@ -67,38 +67,38 @@ This document contains a detailed enumerated task list for implementing the Swag
 ### Character Sprite Assets
 *Plan: 3.1 | Requirements: #3, #23*
 
-- [ ] 3.1.1 Design or obtain blonde pixel art character sprite
-- [ ] 3.1.2 Create running animation frames (minimum 2-4 frames with visible leg movement)
-- [ ] 3.1.3 Create jump pose sprite
-- [ ] 3.1.4 Store sprites in composeApp/src/commonMain/composeResources/drawable
-- [ ] 3.1.5 Verify consistent pixel art style across all character frames
+- [x] 3.1.1 Design or obtain blonde pixel art character sprite
+- [x] 3.1.2 Create running animation frames (minimum 2-4 frames with visible leg movement)
+- [x] 3.1.3 Create jump pose sprite
+- [x] 3.1.4 Store sprites in composeApp/src/commonMain/composeResources/drawable
+- [x] 3.1.5 Verify consistent pixel art style across all character frames
 
 ### Character Rendering & Animation
 *Plan: 3.2 | Requirements: #3, #22*
 
-- [ ] 3.2.1 Create PlayerCharacter data class or component
-- [ ] 3.2.2 Implement sprite rendering using Compose Canvas or Image
-- [ ] 3.2.3 Create animation frame cycling logic for running animation
-- [ ] 3.2.4 Implement animation state switching between running and jumping
-- [ ] 3.2.5 Start running animation immediately when game enters Playing state
-- [ ] 3.2.6 Ensure smooth frame transitions with appropriate timing
+- [x] 3.2.1 Create PlayerCharacter data class or component
+- [x] 3.2.2 Implement sprite rendering using Compose Canvas or Image
+- [x] 3.2.3 Create animation frame cycling logic for running animation
+- [x] 3.2.4 Implement animation state switching between running and jumping
+- [x] 3.2.5 Start running animation immediately when game enters Playing state
+- [x] 3.2.6 Ensure smooth frame transitions with appropriate timing
 
 ### Character Positioning System
 *Plan: 3.3 | Requirements: #4*
 
-- [ ] 3.3.1 Define ground level constant/reference point in game coordinates
-- [ ] 3.3.2 Position character bottom edge aligned with road surface top edge
-- [ ] 3.3.3 Implement Y-coordinate calculation for grounded state
-- [ ] 3.3.4 Verify character doesn't float above ground during rendering
-- [ ] 3.3.5 Maintain consistent positioning throughout running animation cycle
+- [x] 3.3.1 Define ground level constant/reference point in game coordinates
+- [x] 3.3.2 Position character bottom edge aligned with road surface top edge
+- [x] 3.3.3 Implement Y-coordinate calculation for grounded state
+- [x] 3.3.4 Verify character doesn't float above ground during rendering
+- [x] 3.3.5 Maintain consistent positioning throughout running animation cycle
 
 ### Automatic Running Behavior
 *Plan: 3.4 | Requirements: #5*
 
-- [ ] 3.4.1 Implement automatic horizontal movement logic in game loop
-- [ ] 3.4.2 Maintain continuous running animation during movement
-- [ ] 3.4.3 Ensure movement is independent of user input
-- [ ] 3.4.4 Integrate movement speed with game speed system
+- [x] 3.4.1 Implement automatic horizontal movement logic in game loop
+- [x] 3.4.2 Maintain continuous running animation during movement
+- [x] 3.4.3 Ensure movement is independent of user input
+- [x] 3.4.4 Integrate movement speed with game speed system
 
 ---
 
