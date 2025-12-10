@@ -7,6 +7,7 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 
 /**
  * Represents the player character with position, animation state, and rendering.
+ * Implements Collidable for collision detection with items and obstacles.
  */
 data class PlayerCharacter(
     val x: Float = 0f,
@@ -18,7 +19,7 @@ data class PlayerCharacter(
     val animationFrame: Int = 0,
     val animationTimer: Float = 0f,
     val screenHeight: Float = 0f // Store screen height for ground level calculation
-) {
+) : Collidable {
     companion object {
         const val ANIMATION_FRAME_DURATION = 0.15f // seconds per frame
         const val RUNNING_FRAME_COUNT = 4
@@ -326,4 +327,12 @@ data class PlayerCharacter(
      * Checks if the character is currently grounded (not jumping).
      */
     fun isGrounded(): Boolean = !isJumping
+    
+    /**
+     * Returns the hitbox for collision detection.
+     * The hitbox matches the character's position and dimensions.
+     */
+    override fun getHitbox(): Hitbox {
+        return Hitbox(x, y, width, height)
+    }
 }

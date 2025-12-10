@@ -196,32 +196,32 @@ This document contains a detailed enumerated task list for implementing the Swag
 ### Hitbox System
 *Plan: 6.1 | Requirements: #11, #14*
 
-- [ ] 6.1.1 Define hitbox dimensions for player character (width, height)
-- [ ] 6.1.2 Define hitbox dimensions for each swag item type
-- [ ] 6.1.3 Define hitbox dimensions for obstacles
-- [ ] 6.1.4 Implement rectangle-based collision detection algorithm (AABB)
-- [ ] 6.1.5 Optimize collision checks for performance (spatial partitioning if needed)
+- [x] 6.1.1 Define hitbox dimensions for player character (width, height)
+- [x] 6.1.2 Define hitbox dimensions for each swag item type
+- [x] 6.1.3 Define hitbox dimensions for obstacles
+- [x] 6.1.4 Implement rectangle-based collision detection algorithm (AABB)
+- [x] 6.1.5 Optimize collision checks for performance (spatial partitioning if needed)
 
 ### Swag Collection Logic
 *Plan: 6.2 | Requirements: #11*
 
-- [ ] 6.2.1 Detect collision between player hitbox and swag item hitboxes
-- [ ] 6.2.2 Award correct point value based on item type (1, 2, or 5 points)
-- [ ] 6.2.3 Remove collected item from active items list immediately
-- [ ] 6.2.4 Update score display immediately upon collection
-- [ ] 6.2.5 Provide visual feedback on collection (item disappears)
+- [x] 6.2.1 Detect collision between player hitbox and swag item hitboxes
+- [x] 6.2.2 Award correct point value based on item type (1, 2, or 5 points)
+- [x] 6.2.3 Remove collected item from active items list immediately
+- [x] 6.2.4 Update score display immediately upon collection
+- [x] 6.2.5 Provide visual feedback on collection (item disappears)
 - [ ] 6.2.6 Optionally provide audio feedback on collection
-- [ ] 6.2.7 Verify each item type awards correct points through testing
+- [x] 6.2.7 Verify each item type awards correct points through testing
 
 ### Score Management
 *Plan: 6.3 | Requirements: #15*
 
-- [ ] 6.3.1 Initialize score to 0 when game starts
-- [ ] 6.3.2 Implement score increment function
-- [ ] 6.3.3 Update score display in real-time when score changes
-- [ ] 6.3.4 Format score for clear readability (e.g., "Score: 42")
-- [ ] 6.3.5 Maintain score state throughout Playing state
-- [ ] 6.3.6 Pass final score to Game Over screen when game ends
+- [x] 6.3.1 Initialize score to 0 when game starts
+- [x] 6.3.2 Implement score increment function
+- [x] 6.3.3 Update score display in real-time when score changes
+- [x] 6.3.4 Format score for clear readability (e.g., "Score: 42")
+- [x] 6.3.5 Maintain score state throughout Playing state
+- [x] 6.3.6 Pass final score to Game Over screen when game ends
 
 ---
 

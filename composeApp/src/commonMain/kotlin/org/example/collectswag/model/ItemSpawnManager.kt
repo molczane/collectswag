@@ -133,6 +133,13 @@ class ItemSpawnManager(
     }
     
     /**
+     * Removes multiple items from the active list (for batch collection).
+     */
+    fun removeItems(items: List<SwagItem>) {
+        activeItems.removeAll(items.toSet())
+    }
+    
+    /**
      * Resets the spawn manager (clears all items and resets timers).
      */
     fun reset() {

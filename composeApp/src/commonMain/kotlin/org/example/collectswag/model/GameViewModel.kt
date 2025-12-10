@@ -97,6 +97,32 @@ class GameViewModel : ViewModel() {
             manager.update(deltaTime)
             _activeItems.value = manager.getActiveItems()
         }
+        
+        // Check for collisions with swag items
+        checkSwagCollisions()
+    }
+    
+    /**
+     * Checks for collisions between the player and swag items.
+     * Awards points and removes collected items.
+     */
+    private fun checkSwagCollisions() {
+        val player = _playerCharacter.value
+        val items = _activeItems.value
+        
+        // Find all colliding items
+        val collidingItems = CollisionDetector.findAllCollisions(player, items)
+        
+        if (collidingItems.isNotEmpty()) {
+            // Award points for each collected item
+            collidingItems.forEach { item ->
+                addScore(item.type.pointValue)
+            }
+            
+            // Remove collected items from active items list
+            itemSpawnManager?.removeItems(collidingItems)
+            _activeItems.value = itemSpawnManager?.getActiveItems() ?: emptyList()
+        }
     }
     
     /**

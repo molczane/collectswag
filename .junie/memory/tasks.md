@@ -98,3 +98,23 @@
     "NEW INSTRUCTION": "WHEN changing a widely-used method signature THEN refactor signature and update all call sites first"
 }
 
+[2025-12-10 19:56] - Updated by Junie - Trajectory analysis
+{
+    "PLAN QUALITY": "suboptimal",
+    "REDUNDANT STEPS": "create placeholder Obstacle class",
+    "MISSING STEPS": "update SwagItem, wire collision into game loop, run build, update tasks",
+    "BOTTLENECK": "Collision detection not integrated into the update loop to verify behavior.",
+    "PROJECT NOTE": "Implement Collidable in SwagItem and use CollisionDetector in the ViewModel/game loop where items are updated.",
+    "NEW INSTRUCTION": "WHEN tasks specify hitboxes and collisions for existing entities only THEN modify models and integrate checks in update loop; avoid creating new classes"
+}
+
+[2025-12-10 20:05] - Updated by Junie - Trajectory analysis
+{
+    "PLAN QUALITY": "suboptimal",
+    "REDUNDANT STEPS": "-",
+    "MISSING STEPS": "review tasks specifics,mark tasks done,run correct build task",
+    "BOTTLENECK": "The agent did not align work with the exact tasks list before coding.",
+    "PROJECT NOTE": "Use the Gradle task `run` (not `:composeApp:desktopRun`) to start the app.",
+    "NEW INSTRUCTION": "WHEN finishing implementation for a tasks.md section THEN edit docs to mark [x] completions"
+}
+

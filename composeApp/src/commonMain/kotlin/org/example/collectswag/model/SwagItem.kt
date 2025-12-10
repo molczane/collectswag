@@ -89,6 +89,7 @@ sealed class SwagItemType(
 /**
  * Represents an active swag item instance in the game.
  * Tracks position, lifecycle state, and visual properties.
+ * Implements Collidable for collision detection with the player.
  */
 data class SwagItem(
     val type: SwagItemType,
@@ -97,7 +98,7 @@ data class SwagItem(
     val width: Float = 32f,
     val height: Float = 32f,
     val isActive: Boolean = true
-) {
+) : Collidable {
     /**
      * Returns a copy of this item with updated x position (for scrolling).
      */
@@ -151,6 +152,14 @@ data class SwagItem(
                 )
             }
         }
+    }
+    
+    /**
+     * Returns the hitbox for collision detection.
+     * The hitbox matches the item's position and dimensions.
+     */
+    override fun getHitbox(): Hitbox {
+        return Hitbox(x, y, width, height)
     }
     
     companion object {
