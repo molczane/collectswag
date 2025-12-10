@@ -20,6 +20,7 @@ fun App() {
         val gameState by viewModel.gameState.collectAsState()
         val score by viewModel.score.collectAsState()
         val playerCharacter by viewModel.playerCharacter.collectAsState()
+        val activeItems by viewModel.activeItems.collectAsState()
         
         when (gameState) {
             is GameState.Menu -> {
@@ -32,9 +33,11 @@ fun App() {
                 GameScreen(
                     score = score,
                     playerCharacter = playerCharacter,
+                    activeItems = activeItems,
                     onScreenSizeAvailable = { width, height ->
                         viewModel.initializeCharacter(width, height)
                     },
+                    onJumpTriggered = { viewModel.triggerJump() },
                     modifier = Modifier.fillMaxSize()
                 )
             }

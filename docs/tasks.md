@@ -107,43 +107,43 @@ This document contains a detailed enumerated task list for implementing the Swag
 ### Jump Physics
 *Plan: 4.1 | Requirements: #6, #7, #8*
 
-- [ ] 4.1.1 Define jump velocity constant (initial upward velocity)
-- [ ] 4.1.2 Define gravity constant (downward acceleration)
-- [ ] 4.1.3 Implement vertical velocity calculation per frame
-- [ ] 4.1.4 Create jump arc physics using parabolic motion
-- [ ] 4.1.5 Implement ground collision detection for landing
-- [ ] 4.1.6 Prevent double-jumping (only allow jump when character is grounded)
-- [ ] 4.1.7 Switch to jump animation when character becomes airborne
-- [ ] 4.1.8 Return to running animation immediately upon landing
+- [x] 4.1.1 Define jump velocity constant (initial upward velocity)
+- [x] 4.1.2 Define gravity constant (downward acceleration)
+- [x] 4.1.3 Implement vertical velocity calculation per frame
+- [x] 4.1.4 Create jump arc physics using parabolic motion
+- [x] 4.1.5 Implement ground collision detection for landing
+- [x] 4.1.6 Prevent double-jumping (only allow jump when character is grounded)
+- [x] 4.1.7 Switch to jump animation when character becomes airborne
+- [x] 4.1.8 Return to running animation immediately upon landing
 
 ### Touch Input Handler (Mobile)
 *Plan: 4.2 | Requirements: #6*
 
-- [ ] 4.2.1 Create expect declaration for touch input handler in commonMain
-- [ ] 4.2.2 Implement actual touch input handler for Android in androidMain
-- [ ] 4.2.3 Implement actual touch input handler for iOS in iosMain
-- [ ] 4.2.4 Detect tap anywhere on screen during gameplay
-- [ ] 4.2.5 Trigger jump action only when character is grounded
-- [ ] 4.2.6 Ignore touch input when character is airborne
+- [x] 4.2.1 Create expect declaration for touch input handler in commonMain
+- [x] 4.2.2 Implement actual touch input handler for Android in androidMain
+- [x] 4.2.3 Implement actual touch input handler for iOS in iosMain
+- [x] 4.2.4 Detect tap anywhere on screen during gameplay
+- [x] 4.2.5 Trigger jump action only when character is grounded
+- [x] 4.2.6 Ignore touch input when character is airborne
 
 ### Keyboard Input Handler (Desktop/Web)
 *Plan: 4.3 | Requirements: #7*
 
-- [ ] 4.3.1 Create expect declaration for keyboard input handler in commonMain
-- [ ] 4.3.2 Implement actual keyboard input handler for Desktop (JVM) in jvmMain
-- [ ] 4.3.3 Implement actual keyboard input handler for Web in jsMain/wasmJsMain
-- [ ] 4.3.4 Detect Space bar key press events
-- [ ] 4.3.5 Detect Up arrow key press events
-- [ ] 4.3.6 Trigger jump action only when character is grounded
-- [ ] 4.3.7 Ignore keyboard input when character is airborne
+- [x] 4.3.1 Create expect declaration for keyboard input handler in commonMain
+- [x] 4.3.2 Implement actual keyboard input handler for Desktop (JVM) in jvmMain
+- [x] 4.3.3 Implement actual keyboard input handler for Web in jsMain/wasmJsMain
+- [x] 4.3.4 Detect Space bar key press events
+- [x] 4.3.5 Detect Up arrow key press events
+- [x] 4.3.6 Trigger jump action only when character is grounded
+- [x] 4.3.7 Ignore keyboard input when character is airborne
 
 ### Mouse Input Handler (Web)
 *Plan: 4.4 | Requirements: #8*
 
-- [ ] 4.4.1 Create mouse click handler for Web platform in jsMain/wasmJsMain
-- [ ] 4.4.2 Detect mouse click events on game area
-- [ ] 4.4.3 Trigger jump action only when character is grounded
-- [ ] 4.4.4 Ignore mouse input when character is airborne
+- [x] 4.4.1 Create mouse click handler for Web platform in jsMain/wasmJsMain
+- [x] 4.4.2 Detect mouse click events on game area
+- [x] 4.4.3 Trigger jump action only when character is grounded
+- [x] 4.4.4 Ignore mouse input when character is airborne
 
 ---
 
@@ -152,42 +152,42 @@ This document contains a detailed enumerated task list for implementing the Swag
 ### Swag Item Sprites
 *Plan: 5.1 | Requirements: #9, #10, #23*
 
-- [ ] 5.1.1 Create/obtain pixel art sprites for 1-point items (Stickers, Pins, Pens)
-- [ ] 5.1.2 Create/obtain pixel art sprites for 2-point items (Socks, Tote Bags, Notebooks, Bottles)
-- [ ] 5.1.3 Create/obtain pixel art sprites for 5-point items (Hoodie, T-Shirt)
-- [ ] 5.1.4 Ensure all sprites follow consistent pixel art style
-- [ ] 5.1.5 Store sprites in composeApp/src/commonMain/composeResources/drawable
-- [ ] 5.1.6 Define sprite dimensions and visual properties for each item type
+- [x] 5.1.1 Create/obtain pixel art sprites for 1-point items (Stickers, Pins, Pens)
+- [x] 5.1.2 Create/obtain pixel art sprites for 2-point items (Socks, Tote Bags, Notebooks, Bottles)
+- [x] 5.1.3 Create/obtain pixel art sprites for 5-point items (Hoodie, T-Shirt)
+- [x] 5.1.4 Ensure all sprites follow consistent pixel art style
+- [x] 5.1.5 Store sprites in composeApp/src/commonMain/composeResources/drawable
+- [x] 5.1.6 Define sprite dimensions and visual properties for each item type
 
 ### Item Data Model
 *Plan: 5.2 | Requirements: #9, #10*
 
-- [ ] 5.2.1 Create SwagItem sealed class/enum with all item types
-- [ ] 5.2.2 Define point values: Sticker=1, Pin=1, Pen=1
-- [ ] 5.2.3 Define point values: Sock=2, ToteBag=2, Notebook=2, Bottle=2
-- [ ] 5.2.4 Define point values: Hoodie=5, TShirt=5
-- [ ] 5.2.5 Define rarity levels (Common for regular items, Rare for special items)
-- [ ] 5.2.6 Create item position tracking (x, y coordinates)
-- [ ] 5.2.7 Implement item lifecycle management (active, collected, off-screen)
+- [x] 5.2.1 Create SwagItem sealed class/enum with all item types
+- [x] 5.2.2 Define point values: Sticker=1, Pin=1, Pen=1
+- [x] 5.2.3 Define point values: Sock=2, ToteBag=2, Notebook=2, Bottle=2
+- [x] 5.2.4 Define point values: Hoodie=5, TShirt=5
+- [x] 5.2.5 Define rarity levels (Common for regular items, Rare for special items)
+- [x] 5.2.6 Create item position tracking (x, y coordinates)
+- [x] 5.2.7 Implement item lifecycle management (active, collected, off-screen)
 
 ### Item Spawning System
 *Plan: 5.3 | Requirements: #9, #10*
 
-- [ ] 5.3.1 Create ItemSpawnManager class
-- [ ] 5.3.2 Implement spawn timing algorithm based on game time
-- [ ] 5.3.3 Position items floating at jump height (Y-coordinate)
-- [ ] 5.3.4 Implement rarity-based spawn probability (rare items spawn less frequently)
-- [ ] 5.3.5 Ensure items spawn off-screen to the right and scroll into view
-- [ ] 5.3.6 Manage collection of active items on screen
+- [x] 5.3.1 Create ItemSpawnManager class
+- [x] 5.3.2 Implement spawn timing algorithm based on game time
+- [x] 5.3.3 Position items floating at jump height (Y-coordinate)
+- [x] 5.3.4 Implement rarity-based spawn probability (rare items spawn less frequently)
+- [x] 5.3.5 Ensure items spawn off-screen to the right and scroll into view
+- [x] 5.3.6 Manage collection of active items on screen
 
 ### Item Rendering
 *Plan: 5.4 | Requirements: #9, #10*
 
-- [ ] 5.4.1 Implement item rendering in game loop/composable
-- [ ] 5.4.2 Position items at correct Y-coordinate (jump height)
-- [ ] 5.4.3 Scroll items horizontally with game speed
-- [ ] 5.4.4 Remove items from active collection when they move off-screen (left side)
-- [ ] 5.4.5 Ensure pixel art rendering style for all items
+- [x] 5.4.1 Implement item rendering in game loop/composable
+- [x] 5.4.2 Position items at correct Y-coordinate (jump height)
+- [x] 5.4.3 Scroll items horizontally with game speed
+- [x] 5.4.4 Remove items from active collection when they move off-screen (left side)
+- [x] 5.4.5 Ensure pixel art rendering style for all items
 
 ---
 

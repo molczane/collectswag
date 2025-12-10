@@ -23,6 +23,11 @@ class GameViewModel : ViewModel() {
     private val _playerCharacter = MutableStateFlow(PlayerCharacter())
     val playerCharacter: StateFlow<PlayerCharacter> = _playerCharacter.asStateFlow()
     
+    private var itemSpawnManager: ItemSpawnManager? = null
+    
+    private val _activeItems = MutableStateFlow<List<SwagItem>>(emptyList())
+    val activeItems: StateFlow<List<SwagItem>> = _activeItems.asStateFlow()
+    
     private var gameLoopJob: Job? = null
     
     companion object {
@@ -39,6 +44,7 @@ class GameViewModel : ViewModel() {
             _score.value = 0
             _gameState.value = GameState.Playing
             resetPlayerCharacter()
+            itemSpawnManager?.reset()
             startGameLoop()
         }
     }
@@ -81,10 +87,17 @@ class GameViewModel : ViewModel() {
      * Updates game state each frame.
      */
     private fun updateGame(deltaTime: Float) {
-        // Update character animation and movement
+        // Update character animation, movement, and jump physics
         _playerCharacter.value = _playerCharacter.value
             .updateAnimation(deltaTime)
             .updateMovement(deltaTime)
+            .updateJump(deltaTime)
+        
+        // Update item spawning and positions
+        itemSpawnManager?.let { manager ->
+            manager.update(deltaTime)
+            _activeItems.value = manager.getActiveItems()
+        }
     }
     
     /**
@@ -106,6 +119,11 @@ class GameViewModel : ViewModel() {
             y = groundedY,
             screenHeight = screenHeight
         )
+        
+        // Initialize item spawn manager with screen dimensions
+        if (itemSpawnManager == null) {
+            itemSpawnManager = ItemSpawnManager(screenWidth, screenHeight)
+        }
     }
     
     /**
@@ -141,5 +159,15 @@ class GameViewModel : ViewModel() {
      */
     fun resetScore() {
         _score.value = 0
+    }
+    
+    /**
+     * Triggers a jump action if the character is grounded.
+     * Called by input handlers (touch, keyboard, mouse).
+     */
+    fun triggerJump() {
+        if (_gameState.value is GameState.Playing) {
+            _playerCharacter.value = _playerCharacter.value.initiateJump()
+        }
     }
 }

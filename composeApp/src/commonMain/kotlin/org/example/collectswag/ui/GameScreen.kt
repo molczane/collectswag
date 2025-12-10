@@ -3,6 +3,9 @@ package org.example.collectswag.ui
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.focusable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -11,26 +14,52 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.key.*
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.example.collectswag.model.PlayerCharacter
+import org.example.collectswag.model.SwagItem
 
 /**
  * Game Screen with pixel art aesthetic.
- * Displays blue sky background, clouds, grey road, score counter, and player character.
+ * Displays blue sky background, clouds, grey road, score counter, player character, and collectible items.
  */
 @Composable
 fun GameScreen(
     score: Int,
     playerCharacter: PlayerCharacter,
+    activeItems: List<SwagItem> = emptyList(),
     onScreenSizeAvailable: (Float, Float) -> Unit = { _, _ -> },
+    onJumpTriggered: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     Box(
         modifier = modifier
             .fillMaxSize()
             .background(Color(0xFF87CEEB)) // Sky blue background
+            // Touch/Click input for mobile and web
+            .pointerInput(Unit) {
+                detectTapGestures(
+                    onTap = { onJumpTriggered() }
+                )
+            }
+            // Keyboard input for desktop and web
+            .onKeyEvent { keyEvent ->
+                if (keyEvent.type == KeyEventType.KeyDown) {
+                    when (keyEvent.key) {
+                        Key.Spacebar, Key.DirectionUp -> {
+                            onJumpTriggered()
+                            true
+                        }
+                        else -> false
+                    }
+                } else {
+                    false
+                }
+            }
+            .focusable()
     ) {
         // Cloud sprites using Canvas
         Canvas(modifier = Modifier.fillMaxSize()) {
@@ -88,6 +117,11 @@ fun GameScreen(
                     size = Size(dashWidth, 4f)
                 )
                 x += dashWidth + dashGap
+            }
+            
+            // Draw collectible items
+            activeItems.forEach { item ->
+                item.draw(this)
             }
             
             // Draw player character

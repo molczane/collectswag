@@ -25,6 +25,10 @@ data class PlayerCharacter(
         const val ROAD_HEIGHT_RATIO = 0.2f // Road takes 20% of screen height
         const val RUNNING_SPEED = 200f // pixels per second
         
+        // Jump physics constants
+        const val JUMP_VELOCITY = -600f // Initial upward velocity (negative = up)
+        const val GRAVITY = 1800f // Downward acceleration (positive = down)
+        
         /**
          * Calculates the ground level Y coordinate (top of the road).
          */
@@ -265,4 +269,59 @@ data class PlayerCharacter(
         val newX = x + (RUNNING_SPEED * deltaTime)
         return copy(x = newX)
     }
+    
+    /**
+     * Initiates a jump if the character is currently grounded.
+     * Returns a new PlayerCharacter with jump state activated.
+     */
+    fun initiateJump(): PlayerCharacter {
+        return if (!isJumping && screenHeight > 0f) {
+            copy(
+                isJumping = true,
+                velocityY = JUMP_VELOCITY
+            )
+        } else {
+            this // Already jumping or not initialized, no change
+        }
+    }
+    
+    /**
+     * Updates jump physics including vertical velocity and position.
+     * Applies gravity and handles landing detection.
+     */
+    fun updateJump(deltaTime: Float): PlayerCharacter {
+        if (!isJumping) {
+            return this // Not jumping, no physics to update
+        }
+        
+        // Apply gravity to velocity
+        val newVelocityY = velocityY + (GRAVITY * deltaTime)
+        
+        // Update vertical position
+        val newY = y + (velocityY * deltaTime)
+        
+        // Calculate ground level
+        val groundY = getGroundedY(screenHeight, height)
+        
+        // Check if character has landed
+        return if (newY >= groundY) {
+            // Character has landed
+            copy(
+                y = groundY,
+                isJumping = false,
+                velocityY = 0f
+            )
+        } else {
+            // Still in the air
+            copy(
+                y = newY,
+                velocityY = newVelocityY
+            )
+        }
+    }
+    
+    /**
+     * Checks if the character is currently grounded (not jumping).
+     */
+    fun isGrounded(): Boolean = !isJumping
 }
