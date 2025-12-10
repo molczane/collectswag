@@ -473,12 +473,62 @@ This document outlines the detailed implementation plan for the Swag Collector g
 
 ---
 
+## Phase 11: Visual Fixes & Bug Corrections
+
+### 11.1 Swag Item XML Drawable Implementation
+**Priority:** High  
+**Requirements:** Req #24  
+**Description:** Replace programmatic swag item rendering with proper XML drawable resources for better visual quality and recognizability.
+
+**Tasks:**
+- Create XML drawable resources for each swag item type (Stickers, Pins, Pens, Socks, Tote Bags, Notebooks, Bottles)
+- Store XML drawables in composeApp/src/commonMain/composeResources/drawable directory
+- Update SwagItem.kt to load and render items from XML drawable resources instead of using DrawScope patterns
+- Ensure all items maintain pixel art aesthetic and are visually recognizable
+- Test rendering of all item types to verify proper appearance
+- Remove old draw pattern methods (drawStickerPattern, drawPinPattern, etc.)
+
+---
+
+### 11.2 Character Fixed Position Implementation
+**Priority:** High  
+**Requirements:** Req #25  
+**Description:** Fix character positioning to keep it at a fixed x-coordinate while scrolling the world, preventing the character from running off-screen.
+
+**Tasks:**
+- Remove updateMovement call from GameViewModel game loop
+- Set character x position to fixed value (15-20% from left edge) during initialization
+- Ensure character x position never changes during gameplay
+- Verify items scroll left correctly while character stays in place
+- Update PlayerCharacter.kt to remove or deprecate updateMovement method
+- Test that character remains visible and stationary on x-axis throughout gameplay
+- Verify background scrolling creates proper illusion of movement
+
+---
+
+### 11.3 UI Border Removal
+**Priority:** High  
+**Requirements:** Req #26  
+**Description:** Remove thick black borders from UI elements for cleaner, more polished appearance.
+
+**Tasks:**
+- Remove .border(4.dp, Color.Black) from game title in MainMenuScreen.kt
+- Remove .border(4.dp, Color.Black) from Play button in MainMenuScreen.kt
+- Remove .border(2.dp, Color.Black) from high score display in MainMenuScreen.kt
+- Remove .border(3.dp, Color.Black) from score counter in GameScreen.kt
+- Optionally add subtle borders (1.dp or less) if needed for visual separation
+- Test all UI elements to ensure they remain readable without thick borders
+- Verify pixel art aesthetic is maintained with cleaner styling
+
+---
+
 ## Priority Summary
 
 **High Priority (Must Have):**
 - All Phase 1-7 items (core gameplay functionality)
 - Platform-specific testing (9.2)
 - Gameplay testing (9.3)
+- All Phase 11 items (visual fixes and bug corrections)
 
 **Medium Priority (Should Have):**
 - Difficulty progression (8.1)

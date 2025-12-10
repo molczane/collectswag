@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    
+    <!-- Sticker - Star shape with yellow/gold color -->
+    
+    <!-- Star center -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M12,12 L20,12 L20,20 L12,20 Z" />
+    
+    <!-- Star top point -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M14,4 L18,4 L18,12 L14,12 Z" />
+    
+    <!-- Star bottom point -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M14,20 L18,20 L18,28 L14,28 Z" />
+    
+    <!-- Star left point -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M4,14 L12,14 L12,18 L4,18 Z" />
+    
+    <!-- Star right point -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M20,14 L28,14 L28,18 L20,18 Z" />
+    
+    <!-- Star highlight (inner) -->
+    <path
+        android:fillColor="#FFF8DC"
+        android:pathData="M14,14 L18,14 L18,18 L14,18 Z" />
+    
+    <!-- Star outline accents -->
+    <path
+        android:fillColor="#DAA520"
+        android:pathData="M12,12 L14,12 L14,14 L12,14 Z" />
+    <path
+        android:fillColor="#DAA520"
+        android:pathData="M18,12 L20,12 L20,14 L18,14 Z" />
+    <path
+        android:fillColor="#DAA520"
+        android:pathData="M12,18 L14,18 L14,20 L12,20 Z" />
+    <path
+        android:fillColor="#DAA520"
+        android:pathData="M18,18 L20,18 L20,20 L18,20 Z" />
+</vector>

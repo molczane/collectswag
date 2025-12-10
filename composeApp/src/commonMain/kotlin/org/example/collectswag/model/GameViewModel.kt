@@ -87,10 +87,9 @@ class GameViewModel : ViewModel() {
      * Updates game state each frame.
      */
     private fun updateGame(deltaTime: Float) {
-        // Update character animation, movement, and jump physics
+        // Update character animation and jump physics
         _playerCharacter.value = _playerCharacter.value
             .updateAnimation(deltaTime)
-            .updateMovement(deltaTime)
             .updateJump(deltaTime)
         
         // Update item spawning and positions

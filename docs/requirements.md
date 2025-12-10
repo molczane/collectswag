@@ -311,3 +311,49 @@
 - WHEN rendering sprites THEN the system SHALL maintain simple and clean visual design
 - WHEN rendering sprites THEN the system SHALL ensure consistency across all game elements
 - WHEN rendering sprites THEN the system SHALL maintain the retro game aesthetic
+
+---
+
+### 24. Swag Item Visual Rendering
+
+**User Story:**
+> As a user, I want collectible swag items to be visually recognizable and properly rendered so that I can identify what I'm collecting.
+
+**Acceptance Criteria:**
+- WHEN swag items are rendered THEN the system SHALL use XML drawable resources for proper vector-based rendering
+- WHEN displaying Stickers THEN the system SHALL render them with recognizable sticker appearance
+- WHEN displaying Pins THEN the system SHALL render them with recognizable pin appearance
+- WHEN displaying Pens THEN the system SHALL render them with recognizable pen appearance
+- WHEN displaying Socks THEN the system SHALL render them with recognizable sock appearance
+- WHEN displaying Tote Bags THEN the system SHALL render them with recognizable tote bag appearance
+- WHEN displaying Notebooks THEN the system SHALL render them with recognizable notebook appearance
+- WHEN displaying Bottles THEN the system SHALL render them with recognizable bottle appearance
+- WHEN rendering swag items THEN the system SHALL maintain pixel art aesthetic consistency
+
+---
+
+### 25. Character Fixed Position
+
+**User Story:**
+> As a user, I want the character to remain visible at a fixed position on screen so that I can focus on timing jumps without losing sight of my character.
+
+**Acceptance Criteria:**
+- WHEN the game is in Playing state THEN the system SHALL keep the character at a fixed horizontal position on screen
+- WHEN the game is running THEN the system SHALL NOT move the character's x-coordinate
+- WHEN the game is running THEN the system SHALL scroll the background and items to create the illusion of movement
+- WHEN the character is displayed THEN the system SHALL position it at approximately 15-20% from the left edge of the screen
+- WHEN the game is running THEN the system SHALL ensure the character remains fully visible at all times
+
+---
+
+### 26. UI Element Styling
+
+**User Story:**
+> As a user, I want UI elements to have clean, polished appearance without distracting visual artifacts so that the interface looks professional.
+
+**Acceptance Criteria:**
+- WHEN displaying the game title THEN the system SHALL NOT render thick black borders around it
+- WHEN displaying the Play button THEN the system SHALL NOT render thick black borders around it
+- WHEN displaying the score counter THEN the system SHALL NOT render thick black borders around it
+- WHEN displaying UI elements THEN the system SHALL use subtle borders or no borders for a clean appearance
+- WHEN displaying UI text boxes THEN the system SHALL maintain pixel art aesthetic without excessive border thickness

@@ -358,9 +358,50 @@ This document contains a detailed enumerated task list for implementing the Swag
 
 ---
 
+## Phase 11: Visual Fixes & Bug Corrections
+
+### Swag Item XML Drawable Implementation
+*Plan: 11.1 | Requirements: #24*
+
+- [x] 11.1.1 Create XML drawable resource for Stickers in composeApp/src/commonMain/composeResources/drawable
+- [x] 11.1.2 Create XML drawable resource for Pins in composeApp/src/commonMain/composeResources/drawable
+- [x] 11.1.3 Create XML drawable resource for Pens in composeApp/src/commonMain/composeResources/drawable
+- [x] 11.1.4 Create XML drawable resource for Socks in composeApp/src/commonMain/composeResources/drawable
+- [x] 11.1.5 Create XML drawable resource for Tote Bags in composeApp/src/commonMain/composeResources/drawable
+- [x] 11.1.6 Create XML drawable resource for Notebooks in composeApp/src/commonMain/composeResources/drawable
+- [x] 11.1.7 Create XML drawable resource for Bottles in composeApp/src/commonMain/composeResources/drawable
+- [x] 11.1.8 Update SwagItem.kt draw() method to load and render items from XML drawable resources
+- [x] 11.1.9 Remove old draw pattern methods (drawStickerPattern, drawPinPattern, drawPenPattern, drawSockPattern, drawToteBagPattern, drawNotebookPattern, drawBottlePattern)
+- [x] 11.1.10 Test rendering of all item types to verify proper appearance and recognizability
+- [x] 11.1.11 Ensure all items maintain pixel art aesthetic consistency
+
+### Character Fixed Position Implementation
+*Plan: 11.2 | Requirements: #25*
+
+- [x] 11.2.1 Remove updateMovement() call from GameViewModel.updateGame() method
+- [ ] 11.2.2 Verify character x position is set to fixed value (15-20% from left) in initializeCharacter()
+- [ ] 11.2.3 Ensure character x position never changes during gameplay
+- [ ] 11.2.4 Test that items scroll left correctly while character stays in place
+- [ ] 11.2.5 Verify character remains fully visible and stationary on x-axis throughout gameplay
+- [ ] 11.2.6 Verify background scrolling creates proper illusion of movement
+- [x] 11.2.7 Update or remove PlayerCharacter.updateMovement() method documentation to reflect it's no longer used
+
+### UI Border Removal
+*Plan: 11.3 | Requirements: #26*
+
+- [x] 11.3.1 Remove .border(4.dp, Color.Black) from game title in MainMenuScreen.kt
+- [x] 11.3.2 Remove .border(4.dp, Color.Black) from Play button in MainMenuScreen.kt
+- [x] 11.3.3 Remove .border(2.dp, Color.Black) from high score display in MainMenuScreen.kt
+- [x] 11.3.4 Remove .border(3.dp, Color.Black) from score counter in GameScreen.kt
+- [ ] 11.3.5 Optionally add subtle borders (1.dp or less) if needed for visual separation
+- [ ] 11.3.6 Test all UI elements to ensure they remain readable without thick borders
+- [ ] 11.3.7 Verify pixel art aesthetic is maintained with cleaner styling
+
+---
+
 ## Task Summary
 
-**Total Tasks:** 186
+**Total Tasks:** 211
 
 **By Phase:**
 - Phase 1 (Foundation): 10 tasks
@@ -373,8 +414,9 @@ This document contains a detailed enumerated task list for implementing the Swag
 - Phase 8 (Progression & Polish): 17 tasks
 - Phase 9 (Testing & QA): 25 tasks
 - Phase 10 (Documentation & Deployment): 11 tasks
+- Phase 11 (Visual Fixes & Bug Corrections): 25 tasks
 
 **By Priority (from plan.md):**
-- High Priority: ~130 tasks (Phases 1-7, 9.2, 9.3)
+- High Priority: ~155 tasks (Phases 1-7, 9.2, 9.3, 11)
 - Medium Priority: ~30 tasks (Phase 8.1, 4.4, 9.1, 10.2)
 - Low Priority: ~26 tasks (Phase 8.2, 8.3, 10.1)

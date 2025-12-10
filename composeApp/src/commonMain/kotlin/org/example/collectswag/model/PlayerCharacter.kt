@@ -263,7 +263,9 @@ data class PlayerCharacter(
     
     /**
      * Updates the character's horizontal position based on running speed.
-     * Movement is automatic and independent of user input.
+     * NOTE: This method is no longer used. The character now stays at a fixed position
+     * while items scroll left to create the illusion of movement.
+     * @deprecated Character position is now fixed at initialization
      */
     fun updateMovement(deltaTime: Float): PlayerCharacter {
         val newX = x + (RUNNING_SPEED * deltaTime)

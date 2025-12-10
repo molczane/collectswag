@@ -1,0 +1,79 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    
+    <!-- Hoodie - Rare item (purple/special color) -->
+    
+    <!-- Hood -->
+    <path
+        android:fillColor="#8E44AD"
+        android:pathData="M10,0 L22,0 L22,6 L10,6 Z" />
+    <path
+        android:fillColor="#9B59B6"
+        android:pathData="M12,2 L20,2 L20,6 L12,6 Z" />
+    
+    <!-- Hood opening (darker inside) -->
+    <path
+        android:fillColor="#6C3483"
+        android:pathData="M14,3 L18,3 L18,6 L14,6 Z" />
+    
+    <!-- Body -->
+    <path
+        android:fillColor="#9B59B6"
+        android:pathData="M6,6 L26,6 L26,28 L6,28 Z" />
+    
+    <!-- Body shading -->
+    <path
+        android:fillColor="#8E44AD"
+        android:pathData="M6,6 L8,6 L8,28 L6,28 Z" />
+    <path
+        android:fillColor="#8E44AD"
+        android:pathData="M24,6 L26,6 L26,28 L24,28 Z" />
+    
+    <!-- Sleeves -->
+    <path
+        android:fillColor="#9B59B6"
+        android:pathData="M2,8 L6,8 L6,18 L2,18 Z" />
+    <path
+        android:fillColor="#9B59B6"
+        android:pathData="M26,8 L30,8 L30,18 L26,18 Z" />
+    
+    <!-- Sleeve cuffs -->
+    <path
+        android:fillColor="#8E44AD"
+        android:pathData="M2,16 L6,16 L6,18 L2,18 Z" />
+    <path
+        android:fillColor="#8E44AD"
+        android:pathData="M26,16 L30,16 L30,18 L26,18 Z" />
+    
+    <!-- Front pocket -->
+    <path
+        android:fillColor="#8E44AD"
+        android:pathData="M10,18 L22,18 L22,24 L10,24 Z" />
+    <path
+        android:fillColor="#6C3483"
+        android:pathData="M15,18 L17,18 L17,24 L15,24 Z" />
+    
+    <!-- Bottom hem -->
+    <path
+        android:fillColor="#8E44AD"
+        android:pathData="M6,26 L26,26 L26,28 L6,28 Z" />
+    
+    <!-- Drawstrings -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,6 L15,6 L15,10 L14,10 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17,6 L18,6 L18,10 L17,10 Z" />
+    
+    <!-- Rare item sparkle -->
+    <path
+        android:fillColor="#F1C40F"
+        android:pathData="M4,2 L6,2 L6,4 L4,4 Z" />
+    <path
+        android:fillColor="#F1C40F"
+        android:pathData="M26,2 L28,2 L28,4 L26,4 Z" />
+</vector>

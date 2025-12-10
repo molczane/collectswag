@@ -58,3 +58,43 @@
     "NEW INSTRUCTION": "WHEN a new gameplay entity is added THEN Add state list, spawn/update in ViewModel, and render in GameScreen"
 }
 
+[2025-12-10 18:12] - Updated by Junie - Trajectory analysis
+{
+    "PLAN QUALITY": "suboptimal",
+    "REDUNDANT STEPS": "open GameViewModel",
+    "MISSING STEPS": "update requirements, update plan, update tasks, submit changes",
+    "BOTTLENECK": "No edits were applied to the specified documentation files.",
+    "PROJECT NOTE": "Documentation files live under docs/; ensure editing docs/requirements.md, docs/plan.md, docs/tasks.md.",
+    "NEW INSTRUCTION": "WHEN task says \"adjust files\" without implementation THEN directly edit specified docs and submit changes"
+}
+
+[2025-12-10 18:23] - Updated by Junie - Trajectory analysis
+{
+    "PLAN QUALITY": "suboptimal",
+    "REDUNDANT STEPS": "deep code analysis, open multiple source files, line-by-line rendering review",
+    "MISSING STEPS": "update plan, add tasks, cross-platform asset strategy, link docs, validate against guidelines",
+    "BOTTLENECK": "Time spent inspecting code instead of updating the three documentation files.",
+    "PROJECT NOTE": "Compose Multiplatform cannot rely on Android XML drawables across platforms; prefer shared SVG/vector paths or Compose painters.",
+    "NEW INSTRUCTION": "WHEN task limits changes to documentation only THEN skip deep code analysis and update requirements, plan, and tasks"
+}
+
+[2025-12-10 18:39] - Updated by Junie - Trajectory analysis
+{
+    "PLAN QUALITY": "suboptimal",
+    "REDUNDANT STEPS": "create all drawables before verifying resource loading,ide warning handling",
+    "MISSING STEPS": "scan project,check docs/tasks.md,integrate resources,run build,test rendering,implement character fixed position,remove UI borders,update docs/tasks.md,submit",
+    "BOTTLENECK": "Did not integrate XML drawables due to misunderstanding of Compose Multiplatform resource loading.",
+    "PROJECT NOTE": "In Compose Multiplatform, load drawables via org.jetbrains.compose.resources.painterResource with generated Res.* entries.",
+    "NEW INSTRUCTION": "WHEN planning to add new assets THEN prototype one end-to-end integration before bulk creation"
+}
+
+[2025-12-10 18:49] - Updated by Junie - Trajectory analysis
+{
+    "PLAN QUALITY": "suboptimal",
+    "REDUNDANT STEPS": "add imports in SwagItem.kt,create and then remove remember painterMap",
+    "MISSING STEPS": "refactor API before call sites,implement painter drawing in SwagItem,run build,mark tasks as done",
+    "BOTTLENECK": "Changed draw() call site before refactoring its signature and implementation.",
+    "PROJECT NOTE": "In Compose Multiplatform, load painters in composable scope and render in DrawScope via drawIntoCanvas { painter.draw(size) }.",
+    "NEW INSTRUCTION": "WHEN changing a widely-used method signature THEN refactor signature and update all call sites first"
+}
+

@@ -41,7 +41,6 @@ fun MainMenuScreen(
                 fontWeight = FontWeight.Bold,
                 color = Color.White,
                 modifier = Modifier
-                    .border(4.dp, Color.Black)
                     .background(Color(0xFF4169E1)) // Royal blue
                     .padding(16.dp)
             )
@@ -54,7 +53,6 @@ fun MainMenuScreen(
                     fontWeight = FontWeight.Bold,
                     color = Color(0xFFFFD700), // Gold color
                     modifier = Modifier
-                        .border(2.dp, Color.Black)
                         .background(Color(0xFF2F4F4F)) // Dark slate gray
                         .padding(12.dp)
                 )
@@ -64,8 +62,7 @@ fun MainMenuScreen(
             Button(
                 onClick = onPlayClick,
                 modifier = Modifier
-                    .size(width = 200.dp, height = 60.dp)
-                    .border(4.dp, Color.Black),
+                    .size(width = 200.dp, height = 60.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(0xFF32CD32), // Lime green
                     contentColor = Color.White

@@ -9,18 +9,25 @@ import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
+import androidx.compose.ui.graphics.nativeCanvas
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.input.key.*
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import collectswag.composeapp.generated.resources.*
 import org.example.collectswag.model.PlayerCharacter
 import org.example.collectswag.model.SwagItem
+import org.example.collectswag.model.SwagItemType
+import org.jetbrains.compose.resources.painterResource
 
 /**
  * Game Screen with pixel art aesthetic.
@@ -35,6 +42,26 @@ fun GameScreen(
     onJumpTriggered: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
+    // Load all item painters
+    val stickerPainter = painterResource(Res.drawable.sticker)
+    val pinPainter = painterResource(Res.drawable.pin)
+    val penPainter = painterResource(Res.drawable.pen)
+    val sockPainter = painterResource(Res.drawable.sock)
+    val toteBagPainter = painterResource(Res.drawable.tote_bag)
+    val notebookPainter = painterResource(Res.drawable.notebook)
+    val bottlePainter = painterResource(Res.drawable.bottle)
+    
+    // Map item types to painters
+    val painterMap = mapOf(
+        SwagItemType.Sticker to stickerPainter,
+        SwagItemType.Pin to pinPainter,
+        SwagItemType.Pen to penPainter,
+        SwagItemType.Sock to sockPainter,
+        SwagItemType.ToteBag to toteBagPainter,
+        SwagItemType.Notebook to notebookPainter,
+        SwagItemType.Bottle to bottlePainter
+    )
+    
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -121,7 +148,8 @@ fun GameScreen(
             
             // Draw collectible items
             activeItems.forEach { item ->
-                item.draw(this)
+                val painter = painterMap[item.type]
+                item.draw(this, painter)
             }
             
             // Draw player character
@@ -133,7 +161,6 @@ fun GameScreen(
             modifier = Modifier
                 .align(Alignment.TopEnd)
                 .padding(16.dp)
-                .border(3.dp, Color.Black)
                 .background(Color(0xFF2F4F4F)) // Dark slate gray
                 .padding(horizontal = 16.dp, vertical = 8.dp)
         ) {

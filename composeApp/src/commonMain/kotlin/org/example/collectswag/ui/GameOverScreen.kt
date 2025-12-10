@@ -42,7 +42,6 @@ fun GameOverScreen(
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFFFF4500), // Orange red
                 modifier = Modifier
-                    .border(4.dp, Color.Black)
                     .background(Color(0xFF8B0000)) // Dark red
                     .padding(16.dp)
             )
@@ -62,7 +61,6 @@ fun GameOverScreen(
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFFFFD700), // Gold color
                 modifier = Modifier
-                    .border(4.dp, Color.Black)
                     .background(Color(0xFF4169E1)) // Royal blue
                     .padding(horizontal = 32.dp, vertical = 16.dp)
             )
@@ -73,8 +71,7 @@ fun GameOverScreen(
             Button(
                 onClick = onRestartClick,
                 modifier = Modifier
-                    .size(width = 240.dp, height = 60.dp)
-                    .border(4.dp, Color.Black),
+                    .size(width = 240.dp, height = 60.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(0xFF32CD32), // Lime green
                     contentColor = Color.White
@@ -92,8 +89,7 @@ fun GameOverScreen(
             Button(
                 onClick = onMenuClick,
                 modifier = Modifier
-                    .size(width = 240.dp, height = 60.dp)
-                    .border(4.dp, Color.Black),
+                    .size(width = 240.dp, height = 60.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(0xFF4169E1), // Royal blue
                     contentColor = Color.White

@@ -1,0 +1,57 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    
+    <!-- Bottle - Water bottle / reusable bottle -->
+    
+    <!-- Bottle cap -->
+    <path
+        android:fillColor="#2C3E50"
+        android:pathData="M12,0 L20,0 L20,4 L12,4 Z" />
+    
+    <!-- Bottle neck -->
+    <path
+        android:fillColor="#3498DB"
+        android:pathData="M13,4 L19,4 L19,8 L13,8 Z" />
+    
+    <!-- Bottle body -->
+    <path
+        android:fillColor="#3498DB"
+        android:pathData="M10,8 L22,8 L22,30 L10,30 Z" />
+    
+    <!-- Bottle highlight (left side) -->
+    <path
+        android:fillColor="#5DADE2"
+        android:pathData="M12,10 L14,10 L14,28 L12,28 Z" />
+    
+    <!-- Bottle shadow (right side) -->
+    <path
+        android:fillColor="#2980B9"
+        android:pathData="M20,10 L22,10 L22,28 L20,28 Z" />
+    
+    <!-- Label band -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10,16 L22,16 L22,22 L10,22 Z" />
+    
+    <!-- Label design (simple wave) -->
+    <path
+        android:fillColor="#3498DB"
+        android:pathData="M12,18 L14,18 L14,20 L12,20 Z" />
+    <path
+        android:fillColor="#3498DB"
+        android:pathData="M14,17 L16,17 L16,19 L14,19 Z" />
+    <path
+        android:fillColor="#3498DB"
+        android:pathData="M16,18 L18,18 L18,20 L16,20 Z" />
+    <path
+        android:fillColor="#3498DB"
+        android:pathData="M18,17 L20,17 L20,19 L18,19 Z" />
+    
+    <!-- Bottom of bottle -->
+    <path
+        android:fillColor="#2980B9"
+        android:pathData="M10,28 L22,28 L22,30 L10,30 Z" />
+</vector>
